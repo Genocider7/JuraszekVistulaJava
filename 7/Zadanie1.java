@@ -31,17 +31,17 @@ public class Zadanie1
             numbers[i] = numbers.length - i;
         }
         System.out.println("Before loop:\n" + arrayToString(numbers));
-        for (int i=0; i<numbers.length; i++)
+        for (int i=1; i<numbers.length; i++)
         {
             operation_count++;
-            for (int j=1; j<numbers.length - i; j++)
+            for (int j=0; j<numbers.length - i; j++)
             {
                 operation_count++;
-                if (numbers[j-1] > numbers[j])
+                if (numbers[j] > numbers[j + 1])
                 {
-                    helper = numbers[j-1];
-                    numbers[j-1] = numbers[j];
-                    numbers[j] = helper;
+                    helper = numbers[j];
+                    numbers[j] = numbers[j+1];
+                    numbers[j+1] = helper;
                     operation_count++;
                 }
             }
