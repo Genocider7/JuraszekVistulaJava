@@ -32,6 +32,10 @@ public class Staff extends Person implements Salary
     @Override
     public double salaryForOvertime(double wage, double overtimeHours)
     {
+        if (overtimeHours <= 0)
+        {
+            return 0;
+        }
         return wage * overtimeHours * 1.2;
     }
 }
