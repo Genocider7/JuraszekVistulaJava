@@ -4,6 +4,7 @@ public class Zadanie1
     public static int[] numbers;
     public static int helper;
     public static int operation_count;
+    public static boolean did_operations;
     public static String arrayToString(int[] arr)
     {
         String ret = "[";
@@ -28,11 +29,13 @@ public class Zadanie1
         operation_count = 0;
         for(int i=0; i<numbers.length; i++)
         {
-            numbers[i] = numbers.length - i;
+            // numbers[i] = numbers.length - i;
+            numbers[i] = i+1;
         }
         System.out.println("Before loop:\n" + arrayToString(numbers));
         for (int i=1; i<numbers.length; i++)
         {
+            did_operations = false;
             operation_count++;
             for (int j=0; j<numbers.length - i; j++)
             {
@@ -43,7 +46,12 @@ public class Zadanie1
                     numbers[j] = numbers[j+1];
                     numbers[j+1] = helper;
                     operation_count++;
+                    did_operations = true;
                 }
+            }
+            if (!did_operations)
+            {
+                break;
             }
         }
         System.out.println("After loop:\n" + arrayToString(numbers));
