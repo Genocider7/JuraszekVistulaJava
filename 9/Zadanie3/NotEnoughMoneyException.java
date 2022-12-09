@@ -6,8 +6,8 @@ public class NotEnoughMoneyException extends Exception
     {
         super(errString);
     }
-    public NotEnoughMoneyException(String errString, Throwable err)
+    public NotEnoughMoneyException()
     {
-        super(errString, err);
+        super("Not enough money");
     }
 }

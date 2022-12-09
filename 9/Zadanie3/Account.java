@@ -33,7 +33,7 @@ public class Account {
     {
         if (money > balance)
         {
-            throw new NotEnoughMoneyException("Trying to transfer more money than is balance");
+            throw new NotEnoughMoneyException();
         }
         balance -= money;
     }
