@@ -8,6 +8,7 @@ class Zadanie1
         }
         catch (NullPointerException e)
         {
+            System.out.println("variable was null");
             e.printStackTrace();
             System.out.println(e.toString());
         }
