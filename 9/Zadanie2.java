@@ -6,6 +6,7 @@ public class Zadanie2 {
         try
         {
             chosen_number = numbers[n];
+            result = chosen_number / divisor;
         }
         catch (ArrayIndexOutOfBoundsException array_exception)
         {
@@ -13,16 +14,7 @@ public class Zadanie2 {
             System.out.println("Stack trace: ");
             array_exception.printStackTrace();
             System.out.println(array_exception);
-            chosen_number = -2;
-            divisor = 1;
-        }
-        finally
-        {
-            System.out.println("Notice: I finished trying to access array element");
-        }
-        try
-        {
-            result = chosen_number / divisor;
+            result = -2;
         }
         catch (ArithmeticException arith_exception)
         {
@@ -34,7 +26,7 @@ public class Zadanie2 {
         }
         finally
         {
-            System.out.println("Notice: I finished trying to divide number");
+            System.out.println("Notice: I finished calculations");
         }
         return result;
     }
