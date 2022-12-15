@@ -6,16 +6,17 @@ import java.io.IOException;
 public class Zadanie2
 {
     public static void main(String[] args) {
-        Scanner console = new Scanner(System.in);
         String filename;
         int read_byte;
-        System.out.println("Please enter filename: ");
-        filename = console.nextLine();
+        try (Scanner console = new Scanner(System.in))
+        {
+            System.out.println("Please enter filename: ");
+            filename = console.nextLine();
+        }
         try (FileInputStream fileStream = new FileInputStream(filename))
         {
             do 
             {
-                //throws error for some reason, I don't know why
                 read_byte = fileStream.read();
                 if (read_byte != -1)
                 {
@@ -26,7 +27,6 @@ public class Zadanie2
         }
         catch (FileNotFoundException e)
         {
-            console.close();
             System.out.println("Nie znaleziono pliku \"" + filename + "\"");
             return;
         }
@@ -34,7 +34,5 @@ public class Zadanie2
         {
             System.out.println("Błąd podczas odczytywania z pliku");
         }
-        
-        console.close();
     }
 }

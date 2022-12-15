@@ -9,11 +9,13 @@ public class Zadanie3 {
         String filename;
         String filename2;
         int read_byte;
-        Scanner console = new Scanner(System.in);
-        System.out.println("Please enter filename:");
-        filename = console.nextLine();
-        System.out.println("Please enter name of the second file:");
-        filename2 = console.nextLine();
+        try (Scanner console = new Scanner(System.in))
+        {
+            System.out.println("Please enter filename:");
+            filename = console.nextLine();
+            System.out.println("Please enter name of the second file:");
+            filename2 = console.nextLine();
+        }
         try (FileInputStream in = new FileInputStream(filename); FileOutputStream out = new FileOutputStream(filename2))
         {
             do
@@ -38,6 +40,5 @@ public class Zadanie3 {
         {
             System.out.println("There has been error handling the file");
         }
-        console.close();
     }  
 }
