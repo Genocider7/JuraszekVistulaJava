@@ -11,7 +11,7 @@ public class Zadanie2
         int read_byte;
         System.out.println("Please enter filename: ");
         filename = console.nextLine();
-        try (FileInputStream filestream = new FileInputStream(filename))
+        try (FileInputStream fileStream = new FileInputStream(filename))
         {
             do 
             {
