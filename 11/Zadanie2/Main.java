@@ -7,8 +7,10 @@ public class Main
         Priority mt3 = new Priority("thread nr 1 with normal priority");
         Priority mt4 = new Priority("thread nr 2 with normal priority");
         Priority mt5 = new Priority("thread nr 3 with normal priority");
-        mt1.thread.setPriority(Thread.NORM_PRIORITY + 2);
-        mt2.thread.setPriority(Thread.NORM_PRIORITY - 2);
+        // mt1.thread.setPriority(Thread.NORM_PRIORITY + 2);
+        // mt2.thread.setPriority(Thread.NORM_PRIORITY - 2);
+        mt1.thread.setPriority(Thread.MAX_PRIORITY);
+        mt2.thread.setPriority(Thread.MIN_PRIORITY);
         mt1.thread.start();
         mt2.thread.start();
         mt3.thread.start();
